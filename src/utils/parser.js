@@ -41,7 +41,7 @@ const parseTestsCount = (data) => {
 //parses the input data into an array of boards
 export const parseInput = (input) => {
     const lines = input
-        .split("\n")
+        .split(/\r?\n/)
         .map((line) => line.trim())
         .filter((line) => line.length > 0);
 

@@ -9,8 +9,7 @@ try {
     const data = readFileSync(inputFile);
     const boards = parseInput(data);
     const results = processBoards(boards);
-    console.log(`${results.join('\n')}`);
-    writeFileSync(outputFile, results);
+    writeFileSync(outputFile, results.join('\n'));
 } catch (error) {
     console.error(`Error : ${error.message}`);
     process.exit(1);

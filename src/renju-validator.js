@@ -34,11 +34,8 @@ const isWinningLine = (board, row, column, direction, stone) => {
     if (!isStoneAtOffset(board, row, column, direction, i, stone)) return false;
   }
 
-  //checks stone after 5th to avoid >5 streak
-  if (isStoneAtOffset(board, row, column, direction, WIN_STREAK, stone))
-    return false;
-
-  return true;
+  //checks stone after 5th to avoid >5 streak, if streak is 5 returns true, otherwise false
+  return !isStoneAtOffset(board, row, column, direction, WIN_STREAK, stone)
 };
 
 //checks all possible winning lines for cell
